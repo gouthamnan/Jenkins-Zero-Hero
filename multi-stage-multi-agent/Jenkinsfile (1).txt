@@ -19,3 +19,13 @@ pipeline {
     }
   }
 }
+stage('DB') {
+      agent {
+        docker { image 'mysql:advanced' }
+      }
+      steps {
+        sh 'SELECT | FROM ASDF'
+      }
+    }
+  }
+}
